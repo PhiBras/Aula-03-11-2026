@@ -6,7 +6,7 @@ let tema = localStorage.getItem(themeStorageKey) || "light";
 
 function aplicarTema() {
   document.body.dataset.theme = tema;
-  themeToggle.textContent = tema === "dark" ? "Ativar tema claro" : "Ativar tema escuro";
+  themeToggle.setAttribute("aria-label", tema === "dark" ? "Ativar tema claro" : "Ativar tema escuro");
   themeToggle.setAttribute("aria-pressed", String(tema === "dark"));
 }
 
