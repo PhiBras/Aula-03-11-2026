@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questão 01 – Sistema de Login Acadêmico</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Questão 01 — Sistema de Login Acadêmico</h2>
+<p class="desc">Verifica o e-mail e a senha usando o Supabase Auth.</p>
+<div class="box" id="demo">
+<form id="f"><input type="email" id="u" placeholder="E-mail" autocomplete="email" required><input type="password" id="s" placeholder="Senha" autocomplete="current-password" minlength="6" required><button class="b">Entrar</button><button class="b" type="button" id="cadastro">Criar conta</button></form><p id="m" role="status"></p></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../../supabase-config.js"></script>
+<script src="../../supabase-results.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
