@@ -1,0 +1,6 @@
+body[data-theme="dark"]{background:#111827;color:#f3f4f6}
+body[data-theme="dark"] .desc{color:#cbd5e1}
+body[data-theme="dark"] .box{background:#1f2937;color:#f3f4f6}
+body[data-theme="dark"] input,body[data-theme="dark"] textarea,body[data-theme="dark"] select{background:#111827;color:#f3f4f6;border-color:#64748b}
+body[data-theme="dark"] .notif{background:#1f2937;color:#f3f4f6;border-color:#64748b}
+body[data-theme="dark"] [role="status"]{background:#1e3a8a!important;color:#dbeafe!important}

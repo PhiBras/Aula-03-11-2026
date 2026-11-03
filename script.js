@@ -1,5 +1,26 @@
-const botoes = [...document.querySelectorAll("aside button")];
+const botoes = [...document.querySelectorAll("aside button[data-q]")];
 const visualizador = document.getElementById("visualizador");
+const themeToggle = document.getElementById("theme-toggle");
+const themeStorageKey = "atividade-fixacao-theme";
+let tema = localStorage.getItem(themeStorageKey) || "light";
+
+function aplicarTema() {
+  document.body.dataset.theme = tema;
+  themeToggle.textContent = tema === "dark" ? "Ativar tema claro" : "Ativar tema escuro";
+  themeToggle.setAttribute("aria-pressed", String(tema === "dark"));
+}
+
+themeToggle.addEventListener("click", () => {
+  tema = tema === "dark" ? "light" : "dark";
+  localStorage.setItem(themeStorageKey, tema);
+  aplicarTema();
+  visualizador.contentWindow?.postMessage({ type: "atividade-fixacao-theme", theme: tema }, location.origin);
+});
+
+aplicarTema();
+visualizador.addEventListener("load", () => {
+  visualizador.contentWindow?.postMessage({ type: "atividade-fixacao-theme", theme: tema }, location.origin);
+});
 
 function abrir(i) {
   visualizador.src = "questoes/" + botoes[i].dataset.q + "/index.html";
