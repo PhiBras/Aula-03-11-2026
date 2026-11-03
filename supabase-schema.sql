@@ -34,8 +34,8 @@ drop policy if exists "Permitir registro anonimo de resultados"
 create policy "Permitir registro anonimo de resultados"
   on public.resultados_exercicios
   for insert
-  to anon
+  to anon, authenticated
   with check (true);
 
-grant insert on public.resultados_exercicios to anon;
-grant usage, select on sequence public.resultados_exercicios_id_seq to anon;
+grant insert on public.resultados_exercicios to anon, authenticated;
+grant usage, select on sequence public.resultados_exercicios_id_seq to anon, authenticated;
